@@ -1,8 +1,7 @@
-//do i still  need this text???
 var now = dayjs();
 var currentDay = $('#currentDay');
 
-// console.log("script2 is getting loaded")
+
 
 //Display the time on headers
 currentDay.text("Today's schedule: " + now.format('DD MMM YYYY [at] hh:mm a'));
@@ -17,21 +16,21 @@ currentDay.text("Today's schedule: " + now.format('DD MMM YYYY [at] hh:mm a'));
         for (var i = 9; i < 17; i++){
             if(i < hour){
                 var past = "#textarea-hour-".concat(i.toString());
-                // $(past).css("background-color", "grey");
+                $(past).css("background-color", "grey");
             }
             if (i == hour){
                 var current = "#textarea-hour-".concat(hour.toString());
-                // $(current).css("background-color", "red");
+                $(current).css("background-color", "red");
             }
             else if (i > hour){
                 var future = "#textarea-hour-".concat(i.toString());
-                // $(future).css("background-color", "green");
+                $(future).css("background-color", "#77dd77");
             }
         }
 
         // Storing to local storage
         for (var i = 9; i < 17; i++){
-            var idOfCurrentTextArea =  "#textarea-hour-".concat(i.toString())
+            var idOfCurrentTextArea =  "#textarea-hour-".concat(i.toString());
             if (localStorage.getItem(i) != null){
                 $(idOfCurrentTextArea).val(localStorage.getItem(i));
             }
@@ -44,10 +43,8 @@ currentDay.text("Today's schedule: " + now.format('DD MMM YYYY [at] hh:mm a'));
         //Button doesnt work!!! 
         $("#saveTime").click(function(){
             for (var i = 9; i < 17; i++){
-                var idOfCurrentTextArea =  "#textarea-hour-".concat(i.toString())
-                localStorage.setItem(i,  $(idOfCurrentTextArea).val())
-                //I want to include an alert after schedule is updated, HOW????
-                alert("ABC");
+                var idOfCurrentTextArea =  "#textarea-hour-".concat(i.toString());
+                localStorage.setItem(i,  $(idOfCurrentTextArea).val());
             }
 
           });

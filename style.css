@@ -17,7 +17,7 @@ textarea {
 }
 
 .time-block {
-  border-radius: 15px;
+  border-radius: 0px;
 }
 
 .row {
@@ -41,7 +41,7 @@ textarea {
 }
 
 .future {
-  background-color: #77dd77;
+  background-color: grey;
   color: white;
 }
 
